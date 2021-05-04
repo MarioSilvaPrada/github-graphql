@@ -18,19 +18,20 @@ module.exports = {
       routes: path.resolve(__dirname, './src/routes'),
       assets: path.resolve(__dirname, './src/assets'),
       theme: path.resolve(__dirname, './src/theme'),
+      store: path.resolve(__dirname, './src/store'),
     },
-    extensions: [ '.js', '.jsx', '.ts', '.tsx', '.css' ],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         include: path.resolve(__dirname, 'src'),
-        use: [ 'babel-loader' ],
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/i,
-        use: [ 'style-loader', 'css-loader' ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.m?js$/,
@@ -38,13 +39,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [ '@babel/preset-env' ],
+            presets: ['@babel/preset-env'],
           },
         },
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg|ttf|otf|eot)$/,
-        use: [ 'file-loader' ],
+        use: ['file-loader'],
       },
       {
         test: /\.tsx?$/,
@@ -63,7 +64,9 @@ module.exports = {
       template: 'src/index.html', //source html
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.NODE_ENV': JSON.stringify(
+        process.env.NODE_ENV || 'development'
+      ),
     }),
     new Dotenv({
       path: './.env',
