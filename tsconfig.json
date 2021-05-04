@@ -8,5 +8,6 @@
     "allowJs": true,
     "baseUrl": "./src",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   }
 }
