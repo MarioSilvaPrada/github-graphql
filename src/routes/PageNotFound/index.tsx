@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './PageNotFound.styled';
+import * as S from './style';
 
 const PageNotFound = () => (
   <S.Wrapper>
